@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EPhone 教程</title>
     <style>
-        /* 基础样式 */ 
+        /* 基礎樣式 */ 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.7;
@@ -47,9 +47,9 @@
             font-weight: 500;
         }
 
-        /* ▼▼▼ 【核心修改】这里是折叠标签的新样式 ▼▼▼ */
+        /* ▼▼▼ 【核心修改】這裡是折疊標籤的新樣式 ▼▼▼ */
 
-        /* 1. 折叠标签容器样式 (保持不变) */
+        /* 1. 折疊標籤容器樣式 (保持不變) */
         details {
             border: 1px solid #e0e0e0;
             border-radius: 8px;
@@ -58,60 +58,60 @@
             overflow: hidden;
         }
 
-        /* 2. 标题区域样式 (核心修改) */
+        /* 2. 標題區域樣式 (核心修改) */
         summary {
             font-weight: 600;
             cursor: pointer;
             padding: 12px 15px;
             display: flex;
-            align-items: center; /* 垂直居中对齐 */
-            gap: 10px; /* 在图标和文字之间增加间距 */
+            align-items: center; /* 垂直居中對齊 */
+            gap: 10px; /* 在圖示和文字之間增加間距 */
         }
         
-        /* 移除浏览器默认的箭头 */
+        /* 移除流覽器默認的箭頭 */
         summary::-webkit-details-marker { display: none; }
         summary { list-style: none; }
 
-        /* 3. 使用 ::before 伪元素在【左侧】创建自定义的三角形图标 */
+        /* 3. 使用 ::before 偽元素在【左側】創建自訂的三角形圖示 */
         summary::before {
-            content: '▶'; /* 使用右箭头字符作为默认图标 */
+            content: '▶'; /* 使用右箭頭字元作為預設圖示 */
             font-size: 0.8em;
             color: #aaa;
-            transition: transform 0.2s ease-in-out; /* 平滑的旋转动画 */
+            transition: transform 0.2s ease-in-out; /* 平滑的旋轉動畫 */
         }
 
-        /* 4. 当 details 展开时，旋转三角形图标 */
+        /* 4. 當 details 展開時，旋轉三角形圖示 */
         details[open] > summary::before {
-            transform: rotate(90deg); /* 旋转90度，变为朝下的箭头 */
+            transform: rotate(90deg); /* 旋轉90度，變為朝下的箭頭 */
         }
 
-        /* 5. 内容区域样式 (保持不变) */
+        /* 5. 內容區域樣式 (保持不變) */
         .details-content {
             padding: 0 15px 15px 15px;
             border-top: 1px solid #f0f0f0;
         }
         
-        /* 6. 【全新】为嵌套的折叠标签增加一点上边距，更好看 */
+        /* 6. 【全新】為嵌套的折疊標籤增加一點上邊距，更好看 */
         .details-content > details {
             margin-top: 10px;
         }
         
-        /* ▲▲▲ CSS修改结束 ▲▲▲ */
-        /* ▼▼▼ 【核心修改】这里是全新的、更清晰的代码框样式 ▼▼▼ */
+        /* ▲▲▲ CSS修改結束 ▲▲▲ */
+        /* ▼▼▼ 【核心修改】這裡是全新的、更清晰的代碼框樣式 ▼▼▼ */
         
-        /* 1. 代码框容器 */
+        /* 1. 代碼框容器 */
         .code-block-container {
             position: relative;
             margin: 15px 0;
         }
 
-        /* 2. 代码框主体 (浅色主题) */
+        /* 2. 代碼框主體 (淺色主題) */
         pre {
-            background-color: #f7f7f8; /* 浅灰色背景 */
+            background-color: #f7f7f8; /* 淺灰色背景 */
             color: #333;           /* 深色文字 */
             padding: 20px;
             border-radius: 8px;
-            border: 1px solid #e0e0e0; /* 添加细边框 */
+            border: 1px solid #e0e0e0; /* 添加細邊框 */
             overflow-x: auto;
             font-family: 'SF Mono', Consolas, 'Courier New', monospace;
             font-size: 14px;
@@ -119,7 +119,7 @@
             word-break: break-all;
         }
 
-        /* 3. 复制按钮 (浅色主题) */
+        /* 3. 複製按鈕 (淺色主題) */
         .copy-code-btn {
             position: absolute;
             top: 10px;
@@ -151,49 +151,49 @@
             border-color: #28a745;
         }
 
-        /* 4. 【全新】语法高亮颜色 */
-        .code-comment { color: #999; font-style: italic; } /* 注释: 灰色斜体 */
-        .code-selector { color: #2a7ab0; font-weight: bold; } /* 选择器: 蓝色粗体 */
-        .code-property { color: #d73a49; } /* 属性: 红色 */
-        .code-value { color: #005cc5; } /* 值: 深蓝色 */
-        .code-function { color: #6f42c1; } /* 函数: 紫色 */
+        /* 4. 【全新】語法高亮顏色 */
+        .code-comment { color: #999; font-style: italic; } /* 注釋: 灰色斜體 */
+        .code-selector { color: #2a7ab0; font-weight: bold; } /* 選擇器: 藍色粗體 */
+        .code-property { color: #d73a49; } /* 屬性: 紅色 */
+        .code-value { color: #005cc5; } /* 值: 深藍色 */
+        .code-function { color: #6f42c1; } /* 函數: 紫色 */
 
-        /* ▲▲▲ 新增CSS结束 ▲▲▲ */
+        /* ▲▲▲ 新增CSS結束 ▲▲▲ */
     </style>
 </head>
 <body>
-    <h1>欢迎使用 EPhone 教程</h1>
-    <p>这里是您EPhone使用过程中的小帮手！下面是一些常用功能的介绍。</p>
+    <h1>歡迎使用 EPhone 教程</h1>
+    <p>這裡是您EPhone使用過程中的小幫手！下面是一些常用功能的介紹。</p>
 
-    <h2>功能介绍 (点击展开)</h2>
+    <h2>功能介紹 (點擊展開)</h2>
     <details>
-        <summary>一、全屏设置</summary>
+        <summary>一、全屏設置</summary>
         <div class="details-content">
             <p>
-                iOS和安卓，如果有任何被遮挡问题，请先看美化调整
+                iOS和安卓，如果有任何被遮擋問題，請先看美化調整
             </p>
             
-            <!-- ▼▼▼ 【全新】这里是嵌套折叠标签的示例 ▼▼▼ -->
+            <!-- ▼▼▼ 【全新】這裡是嵌套折疊標籤的示例 ▼▼▼ -->
             <details>
                 <summary>1.1 iOS</summary>
                 <div class="details-content">
                     <ul>
                         <li>放到桌面</li>
                         <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759148265512_qdqqd_mky7rt.png">
-	        <li>ios请去美化关掉顶栏</li>
+	        <li>ios請去美化關掉頂欄</li>
                     </ul>
                 </div>
             </details>
-            <!-- ▲▲▲ 嵌套示例结束 ▲▲▲ -->
+            <!-- ▲▲▲ 嵌套示例結束 ▲▲▲ -->
             <details>
                 <summary>1.2 安卓Chrome/Edge</summary>
                 <div class="details-content">
                     <ul>
-                        <li><strong>首先打开设置，允许这两个权限</strong> </li>
+                        <li><strong>首先打開設置，允許這兩個許可權</strong> </li>
                         <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759148461096_qdqqd_f9xyy2.png">
-	        <li><strong>打开网页，点击右上角的三个点，点击添加到主屏目，选择第一个下载即可，有点慢</strong></li>
+	        <li><strong>打開網頁，點擊右上角的三個點，點擊添加到主屏目，選擇第一個下載即可，有點慢</strong></li>
                        <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759148515958_qdqqd_u7cz8v.png">
-	        <li><strong>打外观设置点击选择显示顶部状态栏，可以看到电池电量</strong></li>
+	        <li><strong>打外觀設置點擊選擇顯示頂部狀態列，可以看到電池電量</strong></li>
                        <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759148600324_qdqqd_tuy0rh.png">
                     </ul>
                 </div>
@@ -208,33 +208,33 @@
         <summary>二、功能描述</summary>
         <div class="details-content">
             
-            <!-- ▼▼▼ 【全新】这里是嵌套折叠标签的示例 ▼▼▼ -->
+            <!-- ▼▼▼ 【全新】這裡是嵌套折疊標籤的示例 ▼▼▼ -->
             <details>
                 <summary>2.1 底部功能</summary>
                 <div class="details-content">
                     <ul>
-                        <li>如图，最后两个分别为重回和快进</li>
+                        <li>如圖，最後兩個分別為重回和快進</li>
                         <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759148829317_qdqqd_c0l5zt.png">	        
                     </ul>
                 </div>
             </details>
-            <!-- ▲▲▲ 嵌套示例结束 ▲▲▲ -->
+            <!-- ▲▲▲ 嵌套示例結束 ▲▲▲ -->
             <details>
-                <summary>2.2 顶部功能</summary>
+                <summary>2.2 頂部功能</summary>
                 <div class="details-content">
                     <ul>
-                        <li><strong>2.2.1 一起听旁边的就是长期记忆</strong> </li>
+                        <li><strong>2.2.1 一起聽旁邊的就是長期記憶</strong> </li>
                         <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759148930357_qdqqd_a9rr9e.png">
-                        <li><strong>2.2.2 长期记忆</strong> </li>
+                        <li><strong>2.2.2 長期記憶</strong> </li>
             <p>
-                点击长期记忆，当自动总结失败时候，可以点击总结手动总结，点击加号，可以自己写记忆，记忆太多请点精炼字数自己选，然后点击精炼后需要确认才会覆盖原记忆，以防截断丢失记忆。
+                點擊長期記憶，當自動總結失敗時候，可以點擊總結手動總結，點擊加號，可以自己寫記憶，記憶太多請點精煉字數自己選，然後點擊精煉後需要確認才會覆蓋原記憶，以防截斷丟失記憶。
             </p>
                         <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759149009156_qdqqd_4k64ti.png">	        
                     </ul>
                 </div>
             </details>
             <details>
-                <summary>2.3 长按后功能</summary>
+                <summary>2.3 長按後功能</summary>
                 <div class="details-content">
                     <ul>
                         <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759149189350_qdqqd_qf4c8s.png">
@@ -243,41 +243,41 @@
                 </div>
             </details>
             <details>
-                <summary>2.5 正则</summary>
+                <summary>2.5 正則</summary>
                 <div class="details-content">
                     <ul>
-                        <li><strong>打开主页的渲染器，然后请将正则按类别放入，有的需要分开放</strong> </li>
-	       <p> <span class="highlight">小红书那个世界书需注意，特别喜欢调格式，不要浪费token，用gemini/ds/gpt，把我的模版和你调格式的内容扔给ai，告诉他不要修改任何内容，按照模版将格式修正</span></p>
+                        <li><strong>打開主頁的渲染器，然後請將正則按類別放入，有的需要分開放</strong> </li>
+	       <p> <span class="highlight">小紅書那個世界書需注意，特別喜歡調格式，不要浪費token，用gemini/ds/gpt，把我的模版和你調格式的內容扔給ai，告訴他不要修改任何內容，按照模版將格式修正</span></p>
                         <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759149426287_qdqqd_jys3h8.png">
 
                     </ul>
                 </div>
             </details>
             <details>
-                <summary>2.6 视频</summary>
+                <summary>2.6 視頻</summary>
                 <div class="details-content">
                     <ul>
-                        <li><strong>视频通话结束后会自动调用，生成长记忆，如果失败，请点击消息</strong> </li>
+                        <li><strong>視頻通話結束後會自動調用，生成長記憶，如果失敗，請點擊消息</strong> </li>
                         <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759149463930_qdqqd_qrqken.png">
 
                     </ul>
                 </div>
             </details>
             <details>
-                <summary>2.7 一起听</summary>
+                <summary>2.7 一起聽</summary>
                 <div class="details-content">
                     <ul>
-                        <li><strong>对于搜索的歌曲可能只有12h左右的保质期吧，点击清理即可清除掉失效链接</strong> </li>
+                        <li><strong>對於搜索的歌曲可能只有12h左右的保質期吧，點擊清理即可清除掉失效連結</strong> </li>
                         <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759149542074_qdqqd_d527hs.png">
 
                     </ul>
                 </div>
             </details>
             <details>
-                <summary>2.8 后台行动</summary>
+                <summary>2.8 後臺行動</summary>
                 <div class="details-content">
                     <ul>
-                        <li><strong>善用后台行动与独立行动冷却，char会主动问候等，char多可以像我设置的一样，char少可以将后台时间调小一点，独立行动冷却时间则是首次行动和第二次行动的间隔</strong> </li>
+                        <li><strong>善用後臺行動與獨立行動冷卻，char會主動問候等，char多可以像我設置的一樣，char少可以將後臺時間調小一點，獨立行動冷卻時間則是首次行動和第二次行動的間隔</strong> </li>
                         <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759149621938_qdqqd_v5pm4d.png">
  	       <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759149648565_qdqqd_q5j5pi.png">
 
@@ -285,10 +285,10 @@
                 </div>
             </details>
             <details>
-                <summary>2.9 心声</summary>
+                <summary>2.9 心聲</summary>
                 <div class="details-content">
                     <ul>
-                        <li><strong>单聊点击头像即可,记录里轻触卡片即可呼出删除按钮，点击删除就好</strong> </li>
+                        <li><strong>單聊點擊頭像即可,記錄裡輕觸卡片即可呼出刪除按鈕，點擊刪除就好</strong> </li>
                         <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759149807821_qdqqd_hdimzp.png">
 
                     </ul>
@@ -298,52 +298,52 @@
                 <summary>2.10 表情包格式</summary>
                 <div class="details-content">
                     <ul>
-                        <li><strong>user猫箱批量上传</strong> </li>
-                        <p>https://files.catbox.moe/填入代表不同情绪的代码
-		焦虑2a9wte.jpeg </p>
-                        <li><strong>user非猫批量上传</strong> </li>
-                        <p>发射爱心：https://i.postimg.cc/KjGsZ2zc/image.gif </p>
+                        <li><strong>user貓箱批量上傳</strong> </li>
+                        <p>https://files.catbox.moe/填入代表不同情緒的代碼
+		焦慮2a9wte.jpeg </p>
+                        <li><strong>user非貓批量上傳</strong> </li>
+                        <p>發射愛心：https://i.postimg.cc/KjGsZ2zc/image.gif </p>
                     </ul>
                 </div>
             </details>
             <details>
-                <summary>2.11 聊天按钮排序</summary>
+                <summary>2.11 聊天按鈕排序</summary>
                 <div class="details-content">
                     <ul>
-                        <li><strong>根据自己喜好拖动</strong> </li>
+                        <li><strong>根據自己喜好拖動</strong> </li>
                         <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759150270621_qdqqd_iipebf.png">
 
                     </ul>
                 </div>
             </details>
             <details>
-                <summary>2.12 预设</summary>
+                <summary>2.12 預設</summary>
                 <div class="details-content">
                     <ul>
-                        <li><strong>可上传JSON格式的，仅为线下模式可选</strong> </li>
-                        <p>只用过文风、防抢话等，然后人称在预设开gemini会遵守，ds不遵守，其他的没试过</p>
+                        <li><strong>可上傳JSON格式的，僅為線下模式可選</strong> </li>
+                        <p>只用過文風、防搶話等，然後人稱在預設開gemini會遵守，ds不遵守，其他的沒試過</p>
 
                     </ul>
                 </div>
             </details>
             <details>
-                <summary>2.13 清理内存</summary>
+                <summary>2.13 清理記憶體</summary>
                 <div class="details-content">
                     <ul>
-                        <li><strong>清理冗余</strong> </li>
-                        <p>会清理掉群聊npc的头像，此为正常现象</p>
+                        <li><strong>清理冗餘</strong> </li>
+                        <p>會清理掉群聊npc的頭像，此為正常現象</p>
 	       <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759150549683_qdqqd_17jwhv.png">
-                       <li><strong>高级数据清理</strong> </li>
-                        <p>可选择任何人定向清理，动态页面的同理</p>
+                       <li><strong>高級資料清理</strong> </li>
+                        <p>可選擇任何人定向清理，動態頁面的同理</p>
 	       <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759150723180_qdqqd_ujsrmg.png">
                     </ul>
                 </div>
             </details>
             <details>
-                <summary>2.14 发消息时频繁回复动态</summary>
+                <summary>2.14 發消息時頻繁回復動態</summary>
                 <div class="details-content">
                     <ul>
-                        <li>你需要告诉char我已经看到评论了，想好好聊天之类的话术，因为你只要发过动态/回复过他，系统会给他提示你评论过他，因此你需要做的便是污染他的记忆，方可停止“你一个动态，每次点击等待回复后，char都会评论你的闹剧”</li>
+                        <li>你需要告訴char我已經看到評論了，想好好聊天之類的話術，因為你只要發過動態/回復過他，系統會給他提示你評論過他，因此你需要做的便是污染他的記憶，方可停止“你一個動態，每次點擊等待回復後，char都會評論你的鬧劇”</li>
 
                     </ul>
                 </div>
@@ -352,22 +352,22 @@
     </details>
 
     <details>
-        <summary>三、关于无法生成豆瓣/查手机</summary>
+        <summary>三、關於無法生成豆瓣/查手機</summary>
         <div class="details-content">
             <p>
-               目前cli可能特别难生成，换个api/模型应该就好了，测过gemini官key，抱脸反代，dsv3.1
+               目前cli可能特別難生成，換個api/模型應該就好了，測過gemini官key，抱臉反代，dsv3.1
             </p>
             
         </div>
     </details>
 
     <details>
-        <summary>四、关于api</summary>
+        <summary>四、關於api</summary>
         <div class="details-content">
 
-            <!-- ▼▼▼ 【全新】这里是嵌套折叠标签的示例 ▼▼▼ -->
+            <!-- ▼▼▼ 【全新】這裡是嵌套折疊標籤的示例 ▼▼▼ -->
             <details>
-                <summary>4.1 谷歌官方直连</summary>
+                <summary>4.1 穀歌官方直連</summary>
                 <div class="details-content">
                     <ul>
             <p>
@@ -376,13 +376,13 @@
                     </ul>
                 </div>
             </details>
-            <!-- ▲▲▲ 嵌套示例结束 ▲▲▲ -->
+            <!-- ▲▲▲ 嵌套示例結束 ▲▲▲ -->
             <details>
                 <summary>4.2 正副api</summary>
                 <div class="details-content">
                     <ul>
             <p>
-               善用副api，副api用gemini2.5flash那种普通模型即可，不要浪费资源
+               善用副api，副api用gemini2.5flash那種普通模型即可，不要浪費資源
             </p>
                     </ul>
                 </div>
@@ -396,227 +396,227 @@
         <summary>五、css美化</summary>
         <div class="details-content">
             <p>
-               <span class="highlight">一定要自己改数值啊!!!!毕竟每个人的手机大小不一样，找到相对应的点击复制</span>
+               <span class="highlight">一定要自己改數值啊!!!!畢竟每個人的手機大小不一樣，找到相對應的點擊複製</span>
             </p>
-            <!-- ▼▼▼ 【全新】这里是嵌套折叠标签的示例 ▼▼▼ -->
+            <!-- ▼▼▼ 【全新】這裡是嵌套折疊標籤的示例 ▼▼▼ -->
             <details>
-                <summary>5.1 iPhone部分机型会被灵动岛遮挡字</summary>
+                <summary>5.1 iPhone部分機型會被靈動島遮擋字</summary>
                 <div class="details-content">
 
                     <ul>
 <div class="code-block-container">
-    <!-- <pre>和<code>是显示代码的标准标签 -->
+    <!-- <pre>和<code>是顯示代碼的標準標籤 -->
     <pre><code id="code-to-copy-1">
 /*
-  【全局顶栏适配 - 最终对齐版】
-  增加顶栏高度，并将内容“底部对齐”，解决下方太空旷的问题。
+  【全域頂欄適配 - 最終對齊版】
+  增加頂欄高度，並將內容“底部對齊”，解決下方太空曠的問題。
 */
 .header, .qzone-header {
-    /* 核心代码1：将对齐方式从“居中”改为“底部对齐” */
+    /* 核心代碼1：將對齊方式從“居中”改為“底部對齊” */
     align-items: flex-end !important;
 
-    /* 核心代码2：现在您可以分别控制内容上方和下方的间距 */
+    /* 核心代碼2：現在您可以分別控制內容上方和下方的間距 */
 
-    /* 这个padding-top现在控制的是文字上方的“巨大”空白区域。
-       把它改大，顶栏就会变高。
+    /* 這個padding-top現在控制的是文字上方的“巨大”空白區域。
+       把它改大，頂欄就會變高。
     */
     padding-top: calc(50px + env(safe-area-inset-top)) !important;
 
-    /* 这个padding-bottom现在控制的是【文字离底边的距离】。
-       把它改小，文字就会更贴近底边。
+    /* 這個padding-bottom現在控制的是【文字離底邊的距離】。
+       把它改小，文字就會更貼近底邊。
     */
     padding-bottom: 15px !important;
 }
 </code></pre>
-    <!-- 复制按钮 -->
-    <button class="copy-code-btn">复制</button>
+    <!-- 複製按鈕 -->
+    <button class="copy-code-btn">複製</button>
 </div>
                     </ul>
                 </div>
             </details>
-            <!-- ▲▲▲ 嵌套示例结束 ▲▲▲ -->
+            <!-- ▲▲▲ 嵌套示例結束 ▲▲▲ -->
             <details>
-                <summary>5.2 主页卡片以及图标、dock栏移相对位置的移动</summary>
+                <summary>5.2 主頁卡片以及圖示、dock欄移相對位置的移動</summary>
                 <div class="details-content">
                     <ul>
 <div class="code-block-container">
-    <!-- <pre>和<code>是显示代码的标准标签 -->
+    <!-- <pre>和<code>是顯示代碼的標準標籤 -->
     <pre><code id="code-to-copy-1">
 /*
-  【主屏幕布局调整】
-  移动个人资料卡片的位置
+  【主螢幕佈局調整】
+  移動個人資料卡片的位置
 */
 #profile-widget {
-    /* 确保定位生效，这行不需要修改 */
+    /* 確保定位生效，這行不需要修改 */
     position: relative; 
 
-    /* --- 请在这里修改数值来移动卡片 --- */
+    /* --- 請在這裡修改數值來移動卡片 --- */
 
-    /* 【上下移动】:
-       - 使用 top: 50px; 可以将卡片【向下】移动50像素。
-       - 使用 top: -50px; 可以将卡片【向上】移动50像素。
+    /* 【上下移動】:
+       - 使用 top: 50px; 可以將卡片【向下】移動50圖元。
+       - 使用 top: -50px; 可以將卡片【向上】移動50圖元。
     */
     top: 0px;
 
-    /* 【左右移动】:
-       - 使用 left: 30px; 可以将卡片【向右】移动30像素。
-       - 使用 left: -30px; 可以将卡片【向左】移动30像素。
+    /* 【左右移動】:
+       - 使用 left: 30px; 可以將卡片【向右】移動30圖元。
+       - 使用 left: -30px; 可以將卡片【向左】移動30圖元。
     */
     left: 0px;
 }
 
 /*
-  【主屏幕布局调整】
-  修改个人资料卡片与下方图标之间的垂直间距
+  【主螢幕佈局調整】
+  修改個人資料卡片與下方圖示之間的垂直間距
 */
 #main-content-area {
-    /* 核心代码：修改这个 gap 值即可。
-       - App内的默认值是 30px。
-       - 想让距离变大，就用更大的值，比如 60px。
-       - 想让距离变小，就用更小的值，比如 15px。
+    /* 核心代碼：修改這個 gap 值即可。
+       - App內的預設值是 30px。
+       - 想讓距離變大，就用更大的值，比如 60px。
+       - 想讓距離變小，就用更小的值，比如 15px。
     */
     gap: 60px !important;
 }
-/* 【调整 Dock 栏到底部的距离】 */
+/* 【調整 Dock 欄到底部的距離】 */
 #desktop-dock {
     margin-bottom: calc(30px + env(safe-area-inset-bottom));
 }
 </code></pre>
-    <!-- 复制按钮 -->
-    <button class="copy-code-btn">复制</button>
+    <!-- 複製按鈕 -->
+    <button class="copy-code-btn">複製</button>
 </div>
                     </ul>
                 </div>
             </details>
-            <!-- ▼▼▼ 【全新】这里是嵌套折叠标签的示例 ▼▼▼ -->
+            <!-- ▼▼▼ 【全新】這裡是嵌套折疊標籤的示例 ▼▼▼ -->
             <details>
-                <summary>5.3 对于jcy老师的7.21版的相差按钮</summary>
+                <summary>5.3 對於jcy老師的7.21版的相差按鈕</summary>
                 <div class="details-content">
 
                     <ul>
 <div class="code-block-container">
-    <!-- <pre>和<code>是显示代码的标准标签 -->
+    <!-- <pre>和<code>是顯示代碼的標準標籤 -->
     <pre><code id="code-to-copy-1">
 /* ============================================= */
-/* 一、输入框上方【顶部功能栏】的所有圆形按钮      */
+/* 一、輸入框上方【頂部功能欄】的所有圓形按鈕      */
 /* ============================================= */
 
-/* 这是对所有圆形按钮的通用设置，移除它们的默认样式 */
+/* 這是對所有圓形按鈕的通用設置，移除它們的預設樣式 */
 #chat-input-actions-top .chat-action-icon-btn {
     background-color: transparent !important;
     border: none !important;
     box-shadow: none !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
-    /* 统一设置背景图样式 /
-    background-size: 65%; / 图片占按钮大小的65%，可以按需调整 */
+    /* 統一設置背景圖樣式 /
+    background-size: 65%; / 圖片占按鈕大小的65%，可以按需調整 */
     background-repeat: no-repeat;
     background-position: center;
 }
 
-/* 隐藏所有圆形按钮内部的原始SVG图标 */
+/* 隱藏所有圓形按鈕內部的原始SVG圖示 */
 #chat-input-actions-top .chat-action-icon-btn svg {
     display: none;
 }
 
-/* 1. “+”号 (表情面板) 按钮 */
+/* 1. “+”號 (表情面板) 按鈕 */
 #open-sticker-panel-btn {
     background-image: url('https://your-image-url.png');
-    font-size: 0; /* 隐藏原始的"+"号 */
+    font-size: 0; /* 隱藏原始的"+"號 */
 }
 
-/* 2. 发送照片按钮 (相机图标) */
+/* 2. 發送照片按鈕 (相機圖示) */
 #send-photo-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 3. 上传图片按钮 (相册图标) */
+/* 3. 上傳圖片按鈕 (相冊圖示) */
 #upload-image-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 4. 转账按钮 (￥) */
+/* 4. 轉帳按鈕 (￥) */
 #transfer-btn {
     background-image: url('https://your-image-url.png');
-    font-size: 0; /* 隐藏原始的"￥" */
+    font-size: 0; /* 隱藏原始的"￥" */
 }
 
-/* 5. 发送语音按钮 (麦克风图标) */
+/* 5. 發送語音按鈕 (麥克風圖示) */
 #voice-message-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 6. 外卖请求按钮 (外卖袋图标) */
+/* 6. 外賣請求按鈕 (外賣袋圖示) */
 #send-waimai-request-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 7. 视频通话按钮 (单人) */
+/* 7. 視頻通話按鈕 (單人) */
 #video-call-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 8. 群视频通话按钮 (多人) */
+/* 8. 群視頻通話按鈕 (多人) */
 #group-video-call-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 9. 发起投票按钮 (列表图标) */
+/* 9. 發起投票按鈕 (清單圖示) */
 #send-poll-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 10. 分享链接按钮 (链接图标) */
+/* 10. 分享連結按鈕 (連結圖示) */
 #share-link-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 11. 共享位置按钮 (定位图标) */
+/* 11. 共用位置按鈕 (定位圖示) */
 #share-location-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 12. 五子棋按钮 (棋盘图标) */
+/* 12. 五子棋按鈕 (棋盤圖示) */
 #gomoku-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 13. 购物按钮 (购物车图标) */
+/* 13. 購物按鈕 (購物車圖示) */
 #open-shopping-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 14. 拍一拍按钮 (手掌图标) */
+/* 14. 拍一拍按鈕 (手掌圖示) */
 #pat-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 15. 导演模式/编辑按钮 (铅笔图标) */
+/* 15. 導演模式/編輯按鈕 (鉛筆圖示) */
 #edit-last-response-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 16. 重新生成按钮 (刷新图标) */
+/* 16. 重新生成按鈕 (刷新圖示) */
 #regenerate-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 17. 推进剧情按钮 (快进图标) */
+/* 17. 推進劇情按鈕 (快進圖示) */
 #propel-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 18. 群公告板按钮 (喇叭图标) */
+/* 18. 群公告板按鈕 (喇叭圖示) */
 #show-announcement-board-btn {
     background-image: url('https://your-image-url.png');
 }
 
 
 /* ============================================= */
-/* 二、输入框【右侧】的发送和等待按钮             */
+/* 二、輸入框【右側】的發送和等待按鈕             */
 /* ============================================= */
 
-/* 1. "等待回复" 按钮 */
+/* 1. "等待回復" 按鈕 */
 #wait-reply-btn {
     background: transparent !important;
     border: none !important;
@@ -624,94 +624,94 @@
     width: 40px;
     height: 40px;
 }
-/* 替换图片 */
+/* 替換圖片 */
 #wait-reply-btn img {
     content: url('https://your-image-url.png');
     height: 30px !important;
     width: 30px !important;
 }
 
-/* 2. "发送" 按钮 */
+/* 2. "發送" 按鈕 */
 #send-btn {
     background-image: url('https://your-image-url.png');
     background-color: transparent !important;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 60px; /* 您可以自定义发送按钮的宽度 /
-    font-size: 0; / 隐藏原始的"发送"文字 */
+    width: 60px; /* 您可以自訂發送按鈕的寬度 /
+    font-size: 0; / 隱藏原始的"發送"文字 */
 }
 
 
 
 /* ================================== */
-/* 一、表情面板顶部的所有按钮        */
+/* 一、表情面板頂部的所有按鈕        */
 /* ================================== */
 
-/* 这是对表情面板按钮的通用设置，统一大小和样式 */
+/* 這是對表情面板按鈕的通用設置，統一大小和樣式 */
 #sticker-panel-header .panel-btn {
-    font-size: 0 !important; /* 强制隐藏所有原始文字 /
+    font-size: 0 !important; /* 強制隱藏所有原始文字 /
     color: transparent !important;
-    width: 28px; / 设置一个统一的宽度 /
-    height: 28px; / 设置一个统一的高度 /
-    padding: 0; / 移除内边距，让图片完全填充 */
+    width: 28px; / 設置一個統一的寬度 /
+    height: 28px; / 設置一個統一的高度 /
+    padding: 0; / 移除內邊距，讓圖片完全填充 */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-/* 1. “取消”按钮 */
+/* 1. “取消”按鈕 */
 #close-sticker-panel-btn {
     background-image: url('https://your-image-url.png'); 
 }
 
-/* 2. “管理”按钮 */
+/* 2. “管理”按鈕 */
 #manage-stickers-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 3. “批量”按钮 */
+/* 3. “批量”按鈕 */
 #add-sticker-batch-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 4. “URL”按钮 */
+/* 4. “URL”按鈕 */
 #add-sticker-url-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 5. “上传”按钮 */
+/* 5. “上傳”按鈕 */
 #upload-sticker-btn {
     background-image: url('https://your-image-url.png');
 }
 
 
 /* ================================== */
-/* 二、长期记忆页面顶部的按钮        */
+/* 二、長期記憶頁面頂部的按鈕        */
 /* ================================== */
 
-/* 这是对长期记忆顶部按钮的通用设置 */
+/* 這是對長期記憶頂部按鈕的通用設置 */
 #long-term-memory-screen .header .action-btn {
-    font-size: 0 !important; /* 强制隐藏所有原始文字 /
+    font-size: 0 !important; /* 強制隱藏所有原始文字 /
     color: transparent !important;
-    width: 26px; / 设置一个统一的宽度 /
-    height: 26px; / 设置一个统一的高度 */
+    width: 26px; / 設置一個統一的寬度 /
+    height: 26px; / 設置一個統一的高度 */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-/* 1. “精炼”按钮 */
+/* 1. “精煉”按鈕 */
 #refine-memory-btn-header {
     background-image: url('https://your-image-url.png');
 }
 
-/* 2. “总结”按钮 */
+/* 2. “總結”按鈕 */
 #summarize-recent-btn-header {
     background-image: url('https://your-image-url.png');
 }
 
-/* 3. “+” (手动添加) 按钮 */
+/* 3. “+” (手動添加) 按鈕 */
 #add-manual-memory-btn-header {
     background-image: url('https://your-image-url.png');
 }
@@ -719,39 +719,39 @@
 
 
 /* ============================================= */
-/* 一、动态主页功能栏按钮 (“说说”、“动态”、“相册”) */
+/* 一、動態主頁功能欄按鈕 (“說說”、“動態”、“相冊”) */
 /* ============================================= */
 
-/* 这是对这三个按钮的通用设置 */
+/* 這是對這三個按鈕的通用設置 */
 .qzone-actions-bar .action-item {
-    font-size: 0 !important; /* 隐藏原始文字 /
-    height: 32px; / 给按钮一个固定的高度 */
+    font-size: 0 !important; /* 隱藏原始文字 /
+    height: 32px; / 給按鈕一個固定的高度 */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-/* 1. “说说”按钮 */
+/* 1. “說說”按鈕 */
 #create-shuoshuo-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 2. “动态”按钮 */
+/* 2. “動態”按鈕 */
 #create-post-btn {
     background-image: url('https://your-image-url.png');
 }
 
-/* 3. “相册”按钮 */
+/* 3. “相冊”按鈕 */
 #open-album-btn {
     background-image: url('https://your-image-url.png');
 }
 
 
 /* ============================================= */
-/* 二、每条动态下方的交互图标 (转发、点赞、收藏) */
+/* 二、每條動態下方的交互圖示 (轉發、點贊、收藏) */
 /* ============================================= */
 
-/* 通用设置：统一大小并隐藏原始SVG图标 */
+/* 通用設置：統一大小並隱藏原始SVG圖示 */
 .post-feedback-icons .action-icon {
     width: 28px;
     height: 28px;
@@ -760,39 +760,39 @@
     background-position: center;
 }
 .post-feedback-icons .action-icon svg {
-    display: none; /* 隐藏原始图标 */
+    display: none; /* 隱藏原始圖示 */
 }
 
-/* 1. 转发图标 */
+/* 1. 轉發圖示 */
 .post-feedback-icons .action-icon.repost {
     background-image: url('https://your-image-url.png');
 }
 
-/* 2. 点赞图标 */
+/* 2. 點贊圖示 */
 .post-feedback-icons .action-icon.like {
     background-image: url('https://your-image-url.png');
 }
-/* (可选) 为“点赞后”设置一张不同的、高亮的图片 */
+/* (可選) 為“點贊後”設置一張不同的、高亮的圖片 */
 .post-feedback-icons .action-icon.like.active {
     background-image: url('https://your-highlighted-like-image-url.png');
 }
 
 
-/* 3. 收藏图标 */
+/* 3. 收藏圖示 */
 .post-feedback-icons .action-icon.favorite {
     background-image: url('https://your-image-url.png');
 }
-/* (可选) 为“收藏后”设置一张不同的、高亮的图片 */
+/* (可選) 為“收藏後”設置一張不同的、高亮的圖片 */
 .post-feedback-icons .action-icon.favorite.active {
     background-image: url('https://your-highlighted-favorite-image-url.png');
 }
 
 
 /* ============================================= */
-/* 三、评论输入区的按钮 (表情、发送)             */
+/* 三、評論輸入區的按鈕 (表情、發送)             */
 /* ============================================= */
 
-/* 1. 评论区的“表情”按钮 */
+/* 1. 評論區的“表情”按鈕 */
 .post-footer .comment-sticker-btn {
     width: 28px;
     height: 28px;
@@ -802,73 +802,73 @@
     background-position: center;
 }
 .post-footer .comment-sticker-btn svg {
-    display: none; /* 隐藏原始图标 */
+    display: none; /* 隱藏原始圖示 */
 }
 
-/* 2. 评论区的“发送”按钮 */
+/* 2. 評論區的“發送”按鈕 */
 .post-footer .comment-send-btn {
-    font-size: 0; /* 隐藏“发送”文字 /
-    width: 50px; / 自定义宽度 */
+    font-size: 0; /* 隱藏“發送”文字 /
+    width: 50px; / 自訂寬度 */
     background-image: url('https://your-image-url.png');
     background-color: transparent !important;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
-/* --- 【通话】自定义挂断/拒绝按钮图标 --- */
+/* --- 【通話】自訂掛斷/拒絕按鈕圖示 --- */
 
-#hang-up-btn,       /* 通话中的挂断按钮 */
-#cancel-call-btn,   /* 呼叫时的取消按钮 */
-#decline-call-btn   /* 来电时的拒绝按钮 */
+#hang-up-btn,       /* 通話中的掛斷按鈕 */
+#cancel-call-btn,   /* 呼叫時的取消按鈕 */
+#decline-call-btn   /* 來電時的拒絕按鈕 */
 {
-    /* 核心：将背景图片替换为您自己的图片链接 */
+    /* 核心：將背景圖片替換為您自己的圖片連結 */
     background-image: url('https://www.example.com/your-hangup-icon.png') !important;
 
-    /* 推荐：确保您的图片能完整显示 /
-    background-size: cover !important; / 或者使用 contain，根据您的图片调整 */
-    /* 可选：如果您的图片是透明背景的PNG，且不想要红色背景，请取消下面这行的注释 /
+    /* 推薦：確保您的圖片能完整顯示 /
+    background-size: cover !important; / 或者使用 contain，根據您的圖片調整 */
+    /* 可選：如果您的圖片是透明背景的PNG，且不想要紅色背景，請取消下面這行的注釋 /
     / background-color: transparent !important; */
 }
-/* --- 【通话】自定义接听按钮图标 --- */
+/* --- 【通話】自訂接聽按鈕圖示 --- */
 
 #accept-call-btn {
-    /* 核心：将背景图片替换为您自己的图片链接 */
+    /* 核心：將背景圖片替換為您自己的圖片連結 */
     background-image: url('https://example.com/your-accept-icon.png') !important;
 
-    /* 推荐：确保您的图片能完整显示 /
+    /* 推薦：確保您的圖片能完整顯示 /
     background-size: cover !important; / 或 contain */
-    /* 可选：移除按钮的“脉冲”动画效果，在使用静态图片时效果更好 */
+    /* 可選：移除按鈕的“脈衝”動畫效果，在使用靜態圖片時效果更好 */
     animation: none !important;
-    /* 可选：如果您不想要绿色背景，可以取消下面这行的注释 /
+    /* 可選：如果您不想要綠色背景，可以取消下面這行的注釋 /
     / background-color: transparent !important; */
 }
 </code></pre>
-    <!-- 复制按钮 -->
-    <button class="copy-code-btn">复制</button>
+    <!-- 複製按鈕 -->
+    <button class="copy-code-btn">複製</button>
 </div>
                     </ul>
                 </div>
             </details>
 
 
-            <!-- ▼▼▼ 【全新】这里是嵌套折叠标签的示例 ▼▼▼ -->
+            <!-- ▼▼▼ 【全新】這裡是嵌套折疊標籤的示例 ▼▼▼ -->
             <details>
-                <summary>5.4 通话页面动态调整</summary>
+                <summary>5.4 通話頁面動態調整</summary>
                 <div class="details-content">
 
                     <ul>
 <div class="code-block-container">
-    <!-- <pre>和<code>是显示代码的标准标签 -->
+    <!-- <pre>和<code>是顯示代碼的標準標籤 -->
     <pre><code id="code-to-copy-1">
-/* --- 视频通话界面美化方案 (适用于大屏手机) --- */
+/* --- 視頻通話介面美化方案 (適用於大屏手機) --- */
 
-/* 1. 将头像整体向上移动 */
+/* 1. 將頭像整體向上移動 */
 #video-call-screen .video-call-avatar-area {
-  /* 增加底部留白，将头像向上推 */
+  /* 增加底部留白，將頭像向上推 */
   padding-bottom: 120px;
 }
 
-/* 2. 稍微放大头像和名字，让其更清晰 */
+/* 2. 稍微放大頭像和名字，讓其更清晰 */
 #video-call-screen .participant-avatar {
   width: 90px;
   height: 90px;
@@ -877,101 +877,101 @@
   font-size: 14px;
 }
 
-/* 3. 同时也可以让下方的对话框更高一点 */
+/* 3. 同時也可以讓下方的對話方塊更高一點 */
 #video-call-screen #video-call-main {
-  height: 40%; /* 从30%增加到40% */
-  margin-bottom: 80px; /* 距离底部按钮更近一些 */
+  height: 40%; /* 從30%增加到40% */
+  margin-bottom: 80px; /* 距離底部按鈕更近一些 */
 }
 </code></pre>
-    <!-- 复制按钮 -->
-    <button class="copy-code-btn">复制</button>
+    <!-- 複製按鈕 -->
+    <button class="copy-code-btn">複製</button>
 </div>
                     </ul>
                 </div>
             </details>
 
-            <!-- ▼▼▼ 【全新】这里是嵌套折叠标签的示例 ▼▼▼ -->
+            <!-- ▼▼▼ 【全新】這裡是嵌套折疊標籤的示例 ▼▼▼ -->
             <details>
-                <summary>5.5 如果不小心在左边小组件里放了空白符解决</summary>
+                <summary>5.5 如果不小心在左邊小元件裡放了空白符解決</summary>
                 <div class="details-content">
 
                     <ul>
 	       <img class="tutorial-image" src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1759152805158_qdqqd_uu8kb0.png">
 <div class="code-block-container">
-    <!-- <pre>和<code>是显示代码的标准标签 -->
+    <!-- <pre>和<code>是顯示代碼的標準標籤 -->
     <pre><code id="code-to-copy-1">
-/* --- 强制左侧小组件内的文本区域宽度最大化 --- */
+/* --- 強制左側小元件內的文本區域寬度最大化 --- */
 
-/* 1. 确保所有小组件都撑满左侧栏的宽度 */
+/* 1. 確保所有小組件都撐滿左側欄的寬度 */
 .desktop-widget {
     width: 100%;
-    box-sizing: border-box; /* 避免内边距导致宽度溢出 */
+    box-sizing: border-box; /* 避免內邊距導致寬度溢出 */
 }
 
-/* 2. 核心：让可编辑的文本元素 (p 或 span) 自动伸展，占据所有剩余空间 */
+/* 2. 核心：讓可編輯的文本元素 (p 或 span) 自動伸展，佔據所有剩餘空間 */
 .desktop-widget .editable-text {
-    flex-grow: 1; /* 这是让 flex-item 自动拉伸的关键属性 /
-    text-align: left; / 保证文字内容本身是左对齐的 */
+    flex-grow: 1; /* 這是讓 flex-item 自動拉伸的關鍵屬性 /
+    text-align: left; / 保證文字內容本身是左對齊的 */
 }
 </code></pre>
-    <!-- 复制按钮 -->
-    <button class="copy-code-btn">复制</button>
+    <!-- 複製按鈕 -->
+    <button class="copy-code-btn">複製</button>
 </div>
                     </ul>
                 </div>
             </details>
 
-            <!-- ▼▼▼ 【全新】这里是嵌套折叠标签的示例 ▼▼▼ -->
+            <!-- ▼▼▼ 【全新】這裡是嵌套折疊標籤的示例 ▼▼▼ -->
             <details>
-                <summary>5.6 心声散记字体</summary>
+                <summary>5.6 心聲散記字體</summary>
                 <div class="details-content">
 
                     <ul>
 <div class="code-block-container">
-    <!-- <pre>和<code>是显示代码的标准标签 -->
+    <!-- <pre>和<code>是顯示代碼的標準標籤 -->
     <pre><code id="code-to-copy-1">
-/* ▼▼▼ 【进阶】同时更换“心声”和“散记”的字体 ▼▼▼ */
+/* ▼▼▼ 【進階】同時更換“心聲”和“散記”的字體 ▼▼▼ */
 
-/* 1. 定义你的网络字体 (这部分不变) */
+/* 1. 定義你的網路字體 (這部分不變) */
 @font-face {
   font-family: 'MyCustomJottingsFont';
   src: url('https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1758347900655_qdqqd_ak6p9z.ttf'); 
 }
 
-/* 2. 将新字体同时应用到“心声”和“散记”的文字上 */
+/* 2. 將新字體同時應用到“心聲”和“散記”的文字上 */
 #character-profile-modal .thought-content .text {
   font-family: 'MyCustomJottingsFont', sans-serif !important; 
 }
 </code></pre>
-    <!-- 复制按钮 -->
-    <button class="copy-code-btn">复制</button>
+    <!-- 複製按鈕 -->
+    <button class="copy-code-btn">複製</button>
 </div>
                     </ul>
                 </div>
             </details>
 
-            <!-- ▼▼▼ 【全新】这里是嵌套折叠标签的示例 ▼▼▼ -->
+            <!-- ▼▼▼ 【全新】這裡是嵌套折疊標籤的示例 ▼▼▼ -->
             <details>
-                <summary>5.7 安卓手机输入栏被遮挡问题</summary>
+                <summary>5.7 安卓手機輸入欄被遮擋問題</summary>
                 <div class="details-content">
 
                     <ul>
 <div class="code-block-container">
-    <!-- <pre>和<code>是显示代码的标准标签 -->
+    <!-- <pre>和<code>是顯示代碼的標準標籤 -->
     <pre><code id="code-to-copy-1">
-/* 1. 让最外层的容器能够响应视窗高度的动态变化 */ 
+/* 1. 讓最外層的容器能夠回應視窗高度的動態變化 */ 
 #phone-screen { 
-/* 核心修改：将固定的 vh 单位改为 dvh (动态视窗高度) */ 
+/* 核心修改：將固定的 vh 單位改為 dvh (動態視窗高度) */ 
 height: 100dvh !important; } 
-/* 2. 确保聊天内容区能正确地重新计算其内边距 */ 
+/* 2. 確保聊天內容區能正確地重新計算其內邊距 */ 
 #chat-interface-screen #chat-messages { 
-/* 当键盘弹出时，这个内边距可以帮助把最下面的消息顶上来 */ /* 注意：这个值可能需要微调，170px 是一个比较通用的起始值 */
+/* 當鍵盤彈出時，這個內邊距可以説明把最下面的消息頂上來 */ /* 注意：這個值可能需要微調，170px 是一個比較通用的起始值 */
  padding-bottom: 170px !important; }
-/* 3. (可选但推荐) 当输入框获得焦点时，让聊天内容平滑地滚动到底部 */ 
+/* 3. (可選但推薦) 當輸入框獲得焦點時，讓聊天內容平滑地滾動到底部 */ 
 #chat-interface-screen #chat-input:focus { scroll-behavior: smooth; }
 </code></pre>
-    <!-- 复制按钮 -->
-    <button class="copy-code-btn">复制</button>
+    <!-- 複製按鈕 -->
+    <button class="copy-code-btn">複製</button>
 </div>
                     </ul>
                 </div>
@@ -982,42 +982,42 @@ height: 100dvh !important; }
     </details>
 
 
-    <!-- ▼▼▼ 【核心新增】这里是实现复制功能的JavaScript代码 ▼▼▼ -->
+    <!-- ▼▼▼ 【核心新增】這裡是實現複製功能的JavaScript代碼 ▼▼▼ -->
     <script>
-        // 等待整个页面加载完毕
+        // 等待整個頁面載入完畢
         document.addEventListener('DOMContentLoaded', () => {
-            // 找到所有的代码块容器
+            // 找到所有的代碼塊容器
             const codeBlocks = document.querySelectorAll('.code-block-container');
 
-            // 遍历每一个代码块容器
+            // 遍歷每一個代碼塊容器
             codeBlocks.forEach(container => {
-                // 找到容器内部的代码元素和复制按钮
+                // 找到容器內部的代碼元素和複製按鈕
                 const codeElement = container.querySelector('code');
                 const copyButton = container.querySelector('.copy-code-btn');
 
-                // 如果找到了按钮和代码
+                // 如果找到了按鈕和代碼
                 if (codeElement && copyButton) {
-                    // 为按钮添加点击事件
+                    // 為按鈕添加點擊事件
                     copyButton.addEventListener('click', () => {
-                        // 获取代码的纯文本内容
+                        // 獲取代碼的純文字內容
                         const codeText = codeElement.innerText;
 
-                        // 调用浏览器的剪贴板API来复制文本
+                        // 調用流覽器的剪貼板API來複製文本
                         navigator.clipboard.writeText(codeText).then(() => {
-                            // 复制成功后执行这里的代码
-                            copyButton.textContent = '已复制!'; // 改变按钮文字
-                            copyButton.classList.add('copied'); // 添加成功样式
+                            // 複製成功後執行這裡的代碼
+                            copyButton.textContent = '已複製!'; // 改變按鈕文字
+                            copyButton.classList.add('copied'); // 添加成功樣式
 
-                            // 2秒后自动恢复按钮原来的样子
+                            // 2秒後自動恢復按鈕原來的樣子
                             setTimeout(() => {
-                                copyButton.textContent = '复制';
+                                copyButton.textContent = '複製';
                                 copyButton.classList.remove('copied');
                             }, 2000);
 
                         }).catch(err => {
-                            // 如果复制失败（例如在不安全的http环境下），给出提示
-                            console.error('复制失败: ', err);
-                            copyButton.textContent = '复制失败';
+                            // 如果複製失敗（例如在不安全的http環境下），給出提示
+                            console.error('複製失敗: ', err);
+                            copyButton.textContent = '複製失敗';
                         });
                     });
                 }
