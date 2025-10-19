@@ -1,6 +1,6 @@
 {
-  "name": "EPhone",
-  "short_name": "EPhone",
+  "name": "Phone",
+  "short_name": "Phone",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
